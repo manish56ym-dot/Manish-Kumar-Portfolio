@@ -1,0 +1,240 @@
+/* --- FONTS & BASICS --- */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.sidebar {
+  background-color: rgb(221, 218, 218);
+  font-family: 'Fira Sans', sans-serif;
+  height: 100vh;
+
+  /* --- CHANGE 1: THE FIX --- */
+  /* Remove 'position: absolute;' */
+  /* Add 'position: sticky;' so it stays on screen but takes up space */
+  position: sticky;
+  top: 0;
+
+  /* --- CHANGE 2: ADD WIDTH --- */
+  /* You must give it a specific width so the browser knows how much space to reserve */
+  width: 250px;
+
+  flex-shrink: 0;
+  transition: transform 0.3s ease-in;
+  z-index: 100;
+  /* Keeps it on top of content if scrolling gets weird */
+}
+
+
+
+.sidebar nav {
+  padding: 45px;
+}
+
+.sidebar nav li {
+  list-style: none;
+  margin: 24px 0;
+  padding: 15px 0;
+  font-size: 30px;
+}
+
+.sidebar nav li a {
+  text-decoration: none;
+  color: rgb(17, 17, 17);
+  display: block;
+}
+
+/* Highlight the active link */
+.sidebar nav li a:hover,
+.sidebar nav li a.active {
+  color: #3498db;
+  padding-left: 10px;
+  /* Slide effect */
+  transition: 0.3s;
+}
+
+.main-content {
+  /* background-color: #819be4; */
+  width: 90vw;
+}
+
+.container {
+  display: flex;
+
+}
+
+/* Section Styling */
+.education-section {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: sans-serif;
+  /* Replace with your font */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+/* Timeline Container */
+.timeline {
+  position: relative;
+  padding-left: 30px;
+  /* Space for the line */
+  border-left: 2px solid #ddd;
+  /* The vertical line */
+}
+
+/* Individual Item Container */
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  /* Space between items */
+}
+
+/* The Dot on the Line */
+.timeline-dot {
+  position: absolute;
+  left: -36px;
+  /* Adjust to center on the line */
+  top: 5px;
+  height: 12px;
+  width: 12px;
+  background-color: #3498db;
+  /* Blue color */
+  border-radius: 50%;
+  border: 2px solid #fff;
+  /* White ring around dot */
+  box-shadow: 0 0 0 2px #3498db;
+  /* Outer ring effect */
+}
+
+/* The Text Content */
+.timeline-content {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  /* Subtle shadow */
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effect */
+.timeline-item:hover .timeline-content {
+  transform: translateX(5px);
+  /* Slight nudge right on hover */
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Typography */
+.timeline-date {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #fff;
+  background: #3498db;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.degree {
+  margin: 5px 0;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.university {
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+  color: #7f8c8d;
+  font-weight: normal;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .timeline {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .timeline-dot {
+    display: none;
+  }
+}
+
+.hamburger {
+  position: absolute;
+  cursor: pointer;
+  top: 10px;
+  left: 10px;
+  
+  /* --- THE FIX --- */
+  /* Change this from 10 to something huge, like 9999 */
+  /* This ensures it ALWAYS sits on top of the sidebar */
+  z-index: 9999; 
+}
+
+.ham {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.cross {
+  margin-left: 185px;
+  margin-top: 10px;
+}
+
+.sidebarGo {
+  transform: translate(-443px, 0px);
+  position: absolute;
+}
+
+/* --- RESPONSIVE FIX (Paste at bottom of CSS) --- */
+@media (max-width: 900px) {
+
+  /* 1. Stop forcing side-by-side layout */
+  .container {
+    display: block;
+    /* Stacks items instead of Flexbox */
+  }
+
+  /* 2. Main Content takes full width */
+  .main-content {
+    width: 100%;
+    /* Use full screen width */
+    margin-left: 0;
+    /* Remove any margin */
+    padding-top: 60px;
+    /* Add space at top so Hamburger icon doesn't cover text */
+  }
+
+  /* 3. Sidebar Adjustment for Mobile */
+  .sidebar {
+    position: fixed;
+    /* Floats on top of content */
+    height: 100vh;
+    /* Full height */
+    z-index: 1000;
+    /* Ensures it sits ABOVE the text */
+    width: 250px;
+    top: 0;
+    left: 0;
+    /* Optional: Add a shadow so you can see where sidebar ends */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  }
+}

@@ -1,0 +1,205 @@
+/* --- FONTS & BASICS --- */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* Update in index.css */
+body, .main-content {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    /* This creates a "Cloudy Knoxville" effect - professional and subtle */
+}
+/* --- YOUR SIDEBAR STYLING (Preserved) --- */
+.sidebar {
+    background-color: rgb(221, 218, 218);
+    font-family: 'Fira Sans', sans-serif;
+    height: 100vh;
+    position: absolute;     
+    top: 0;
+    flex-shrink: 0;        /* Prevents sidebar from getting squashed */
+    transition: transform 0.3s ease-in;
+}
+
+.sidebar nav {
+    padding: 45px;
+}
+
+.sidebar nav li {
+    list-style: none;
+    margin: 24px 0;
+    padding: 15px 0;
+    font-size: 30px;
+}
+
+.sidebar nav li a {
+    text-decoration: none;
+    color: rgb(17, 17, 17);
+    display: block;
+}
+
+/* Highlight the active link */
+.sidebar nav li a:hover, .sidebar nav li a.active {
+    color: #3498db;
+    padding-left: 10px; /* Slide effect */
+    transition: 0.3s;
+}
+
+.main-content {
+    /* background-color: #819be4; */
+    width: 90vw;
+}
+
+.container {
+    display: flex;
+
+}
+
+.info-container {
+    /* background-color: #835deb; */
+    height: 58vh;
+    width: 80vw;
+    margin: 144px auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.devInfo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.devPic {
+    height: 58vh;
+}
+.hello {
+    font-size: 65px;
+    font-family: 'Faira Sans', sans-serif;
+}
+
+.name {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.about {
+    font-size: 40px;
+
+}
+
+.moreabout {
+    font-size: 22px;
+    margin-top: 23px;
+    font-family: 'Faira Sans', sans-serif;
+}
+
+.buttons button{
+    margin-top: 54px;
+}
+
+.buttons button{
+    padding: 9px 14px;
+    border-radius: 22px;
+    color: white;
+    background-color: dodgerblue;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 20px 3px;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: #3abbdb;
+}
+
+.contactform {
+    padding: 0 34px;
+    padding-top: 144px;
+    font-family: 'Faira Sans', sans-serif;
+}
+
+.contactform h1 {
+    font-family: 'Source Code Pro', monospace;
+    padding: 12px 0;
+}
+
+.contactform form div {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactform form div input {
+    width: 16vw;
+    border-radius: 5px;
+    margin: 6px 0 0 0;
+    padding: 3px;
+}
+
+#emailHelp {
+    font-size: 11px;
+    color: rgb(54, 54, 230);
+    margin: 0 5px;
+    padding: 3px 0 0 0;
+}
+
+#form-check{
+    flex-direction: row;
+}
+#form-check input{
+    width: 29px;
+    margin: 3px 0;
+}
+.btn{
+    padding: 9px 14px;
+    border-radius: 22px;
+    color: white;
+    background-color: dodgerblue;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 0 3px;
+    cursor: pointer;
+}
+
+.hamburger{
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    left: 10px;
+}
+.ham{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.cross{
+    margin-left: 185px;
+    margin-top: 10px;
+}
+.sidebarGo{
+        transform: translate(-443px, 0px);
+        position: absolute;
+    }
+
+
+.btn-sns{
+    font-size: 14px;
+    padding: 10px 19px;  
+    margin: 12px 0;
+}
+.btn:hover{
+    background-color: #3abbdb;
+}
+@media (max-width: 1465px) {
+    /* .sidebar{
+        transform: translate(-443px, 0px);
+        position: absolute;
+    } */
+     .devPic{
+    display: none;
+}
+}

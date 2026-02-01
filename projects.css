@@ -1,0 +1,221 @@
+/* --- FONTS & BASICS --- */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* --- THE LAYOUT FIX (This fixes your "bottom" issue) --- */
+.container {
+    display: flex;
+    /* Forces Sidebar and Content side-by-side */
+    min-height: 100vh;
+    /* Full screen height */
+    width: 100%;
+}
+
+/* --- YOUR SIDEBAR STYLING (Preserved) --- */
+.sidebar {
+    background-color: rgb(221, 218, 218);
+    font-family: 'Fira Sans', sans-serif;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    flex-shrink: 0;
+    /* Prevents sidebar from getting squashed */
+    transition: transform 0.3s ease-in;
+}
+
+.sidebar nav {
+    padding: 45px;
+}
+
+.sidebar nav li {
+    list-style: none;
+    margin: 24px 0;
+    padding: 15px 0;
+    font-size: 30px;
+}
+
+.sidebar nav li a {
+    text-decoration: none;
+    color: rgb(17, 17, 17);
+    display: block;
+}
+
+/* Highlight the active link */
+.sidebar nav li a:hover,
+.sidebar nav li a.active {
+    color: #3498db;
+    padding-left: 10px;
+    /* Slide effect */
+    transition: 0.3s;
+}
+
+/* --- MAIN CONTENT AREA --- */
+.main-content {
+    flex-grow: 1;
+    /* Fills the remaining space on the right */
+    padding: 40px 60px;
+    /* Spacing around the projects */
+    background-color: #f4f7f6;
+    /* Clean background color */
+    overflow-y: auto;
+    /* Allows content to scroll */
+}
+
+.content-header {
+    margin-bottom: 40px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 20px;
+}
+
+.content-header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* --- PROJECT GRID SYSTEM --- */
+.projects-grid {
+    display: grid;
+    /* Auto-fit magic: responsive columns */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* --- CARD DESIGN --- */
+.project-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Visual Gradients */
+.card-visual {
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3.5rem;
+}
+
+.visual-ds {
+    background: linear-gradient(135deg, #3498db, #8e44ad);
+}
+
+.visual-web {
+    background: linear-gradient(135deg, #e74c3c, #f39c12);
+}
+
+.visual-tool {
+    background: linear-gradient(135deg, #2ecc71, #16a085);
+}
+
+/* Card Content */
+.card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    margin: 0 0 10px 0;
+    color: #34495e;
+    font-size: 1.4rem;
+}
+
+.card-content p {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Tech Tags */
+.tech-stack {
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.pill {
+    background: #eff3f5;
+    color: #555;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Buttons */
+.card-actions {
+    margin-top: auto;
+}
+
+.btn-primary {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    text-align: center;
+    background-color: #34495e;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #3498db;
+}
+
+.hamburger {
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    left: 10px;
+}
+
+.ham {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.cross {
+    margin-left: 185px;
+    margin-top: 10px;
+}
+
+.sidebarGo {
+    transform: translate(-443px, 0px);
+    position: absolute;
+}
+
+@media (max-width: 1465px) {
+
+    /* .sidebar{
+        transform: translate(-443px, 0px);
+        position: absolute;
+    } */
+    .devPic {
+        display: none;
+    }
+}

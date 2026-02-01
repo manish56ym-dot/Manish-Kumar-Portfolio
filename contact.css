@@ -1,0 +1,259 @@
+/* --- FONTS & BASICS --- */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* --- YOUR SIDEBAR STYLING (Preserved) --- */
+.sidebar {
+    background-color: rgb(221, 218, 218);
+    font-family: 'Fira Sans', sans-serif;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    flex-shrink: 0;
+    /* Prevents sidebar from getting squashed */
+    transition: transform 0.3s ease-in;
+}
+
+
+
+.sidebar nav {
+    padding: 45px;
+}
+
+.sidebar nav li {
+    list-style: none;
+    margin: 24px 0;
+    padding: 15px 0;
+    font-size: 30px;
+}
+
+.sidebar nav li a {
+    text-decoration: none;
+    color: rgb(17, 17, 17);
+    display: block;
+}
+
+/* Highlight the active link */
+.sidebar nav li a:hover,
+.sidebar nav li a.active {
+    color: #3498db;
+    padding-left: 10px;
+    /* Slide effect */
+    transition: 0.3s;
+}
+
+.main-content {
+    /* background-color: #819be4; */
+    width: 90vw;
+    margin-left: 90px;
+    margin-top: 50px;
+}
+
+.container {
+    display: flex;
+
+}
+
+/* --- CONTACT SECTION STYLES --- */
+
+.contact-wrapper {
+    display: grid;
+    /* Creates two columns: Info (smaller) and Form (larger) */
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+    max-width: 1100px;
+}
+
+/* --- COLUMN 1: INFO CARDS --- */
+.contact-info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.info-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    background: #eef2f7;
+    color: #3498db;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.info-details h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+.info-details p {
+    margin: 5px 0 0 0;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Social Media Icons (Mini version) */
+.social-section h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+/* Brand Colors on Hover */
+.social-btn.linkedin:hover {
+    background: #0077b5;
+    color: white;
+}
+
+.social-btn.github:hover {
+    background: #333;
+    color: white;
+}
+
+.social-btn.instagram:hover {
+    background: #e1306c;
+    color: white;
+}
+
+/* --- COLUMN 2: THE FORM --- */
+.contact-form-column {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #eef2f7;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+    font-family: inherit;
+    /* Ensures text inside matches site font */
+}
+
+/* Blue border when typing */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #3498db;
+}
+
+.btn-submit {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-submit:hover {
+    background: #2980b9;
+}
+
+/* Responsive: Stack columns on mobile */
+@media (max-width: 900px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        /* Stack vertically */
+    }
+}
+
+.hamburger {
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    left: 10px;
+}
+
+.ham {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.cross {
+    margin-left: 185px;
+    margin-top: 10px;
+}
+
+.sidebarGo {
+    transform: translate(-443px, 0px);
+    position: absolute;
+}
+
+@media (max-width: 1465px) {
+
+    /* .sidebar{
+        transform: translate(-443px, 0px);
+        position: absolute;
+    } */
+    .devPic {
+        display: none;
+    }
+}
